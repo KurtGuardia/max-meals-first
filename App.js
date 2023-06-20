@@ -1,13 +1,14 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StatusBar } from 'expo-status-bar'
+import { StyleSheet } from 'react-native'
+import CategoryScreen from './screens/CategoryScreen'
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Hello World!!!!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
+    <>
+      <StatusBar style='light' />
+      <CategoryScreen />
+    </>
+  )
 }
 
 const styles = StyleSheet.create({
@@ -17,4 +18,4 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
-});
+})
