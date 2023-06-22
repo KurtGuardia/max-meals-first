@@ -36,6 +36,7 @@ export default function MealsOverview({
   function renderMealItem(itemData) {
     const item = itemData.item
     const mealItemProps = {
+      id: item.id,
       title: item.title,
       imgURL: item.imageUrl,
       affordability: item.affordability,
