@@ -13,6 +13,7 @@ export default function MealItem({
   duration,
   affordability,
   complexity,
+  onPress,
 }) {
   return (
     <View style={styles.mealItem}>
@@ -21,6 +22,7 @@ export default function MealItem({
         style={({ pressed }) =>
           pressed && styles.buttonPressed
         }
+        onPress={onPress}
       >
         <View>
           <View style={styles.innerContainer}>

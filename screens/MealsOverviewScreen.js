@@ -27,6 +27,12 @@ export default function MealsOverview({
     })
   }, [catId, navigation])
 
+  function pressHandler(item) {
+    navigation.navigate('MealDetail', {
+      item,
+    })
+  }
+
   function renderMealItem(itemData) {
     const item = itemData.item
     const mealItemProps = {
@@ -35,6 +41,7 @@ export default function MealsOverview({
       affordability: item.affordability,
       complexity: item.complexity,
       duration: item.duration,
+      onPress: () => pressHandler(item),
     }
 
     return <MealItem {...mealItemProps} />

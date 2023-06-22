@@ -18,6 +18,7 @@ export default function CategoryScreen({ navigation }) {
       />
     )
   }
+
   return (
     <FlatList
       data={CATEGORIES}
