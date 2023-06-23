@@ -7,6 +7,7 @@ import {
   Text,
   View,
 } from 'react-native'
+import MealsDetails from './MealsDetails'
 
 export default function MealItem({
   id,
@@ -15,7 +16,6 @@ export default function MealItem({
   duration,
   affordability,
   complexity,
-  onPress,
 }) {
   const navigation = useNavigation()
 
@@ -44,17 +44,11 @@ export default function MealItem({
             />
             <Text style={styles.title}>{title}</Text>
           </View>
-          <View style={styles.details}>
-            <Text style={styles.detailItem}>
-              {duration}
-            </Text>
-            <Text style={styles.detailItem}>
-              {complexity.toUpperCase()}
-            </Text>
-            <Text style={styles.detailItem}>
-              {affordability.toUpperCase()}
-            </Text>
-          </View>
+          <MealsDetails
+            duration={duration}
+            affordability={affordability}
+            complexity={complexity}
+          />
         </View>
       </Pressable>
     </View>

@@ -1,18 +1,40 @@
-import { useLayoutEffect } from 'react'
-import { StyleSheet, Text, View } from 'react-native'
+import { Image, StyleSheet, Text, View } from 'react-native'
 import { MEALS } from '../data/dummy-data'
+import MealsDetails from '../components/MealsDetails'
 
 export default function MealScreen({ route }) {
-  const title = route.params.mealId
+  const mealId = route.params.mealId
+  const selectedMeal = MEALS.find(
+    (meal) => meal.id === mealId,
+  )
 
   return (
     <View style={styles.container}>
-      <Text style={styles.text}>{title}</Text>
+      <Image source={{ uri: selectedMeal.imageUrl }} />
+      <Text style={styles.text}>{selectedMeal.title}</Text>
+
+      <MealsDetails
+        duration={selectedMeal.duration}
+        affordability={selectedMeal.affordability}
+        complexity={selectedMeal.complexity}
+      />
+
+      <Text>Ingredients</Text>
+      {selectedMeal.ingredients.map((ingredient) => (
+        <Text key={ingredient}>{ingredient}</Text>
+      ))}
+      <Text>Steps</Text>
+      {selectedMeal.steps.map((step) => (
+        <Text key={step}>{step}</Text>
+      ))}
     </View>
   )
 }
 
 const styles = StyleSheet.create({
+  image: {
+    width: '100%',
+  },
   container: {
     flex: 1,
   },
