@@ -4,14 +4,18 @@ export default function MealsDetails({
   duration,
   complexity,
   affordability,
+  style,
+  textStyle,
 }) {
   return (
-    <View style={styles.details}>
-      <Text style={styles.detailItem}>{duration}</Text>
-      <Text style={styles.detailItem}>
+    <View style={[styles.details, style]}>
+      <Text style={[styles.detailItem, textStyle]}>
+        {duration}
+      </Text>
+      <Text style={[styles.detailItem, textStyle]}>
         {complexity.toUpperCase()}
       </Text>
-      <Text style={styles.detailItem}>
+      <Text style={[styles.detailItem, textStyle]}>
         {affordability.toUpperCase()}
       </Text>
     </View>
