@@ -11,6 +11,7 @@ import MealsDetails from '../components/MealsDetails'
 import Subtitle from '../components/MealDetail/Subtitle'
 import List from '../components/MealDetail/List'
 import { useLayoutEffect } from 'react'
+import IconButton from '../components/IconButton'
 
 export default function MealScreen({ route, navigation }) {
   const mealId = route.params.mealId
@@ -26,9 +27,10 @@ export default function MealScreen({ route, navigation }) {
     navigation.setOptions({
       headerRight: () => {
         return (
-          <Button
-            title='Tap me!'
+          <IconButton
             onPress={headerButtonPressHandler}
+            icon='star'
+            color='white'
           />
         )
       },
